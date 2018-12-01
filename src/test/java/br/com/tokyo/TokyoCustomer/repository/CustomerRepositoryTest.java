@@ -5,8 +5,8 @@ import static org.junit.Assert.assertThat;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.hasProperty;
 import static org.hamcrest.Matchers.is;
+import static br.com.tokyo.TokyoCustomer.TestUtils.getValidNewCustomer;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import org.junit.Test;
@@ -79,12 +79,5 @@ public class CustomerRepositoryTest {
 		assertEquals(customer.getName(), repoCustomer.getName());
 		entityManager.detach(customer);
 	}
-	
- 	private Customer getValidNewCustomer() {
-		return new Customer(
-				"Alex", 
-				LocalDateTime.now().minusYears(18), 
-				"fabiovariant@hotmail.com", 
-				true);
-	}
+
 }

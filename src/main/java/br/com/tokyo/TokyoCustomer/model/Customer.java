@@ -26,8 +26,8 @@ public class Customer {
 	
 	private String name;
 	
-	private LocalDateTime bday;
 	@JsonFormat(pattern="yyyy-MM-dd")
+	private LocalDateTime bday;
 	
 	@Column(unique=true)
 	private String email;

@@ -2,8 +2,11 @@ package br.com.tokyo.TokyoCustomer.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import br.com.tokyo.TokyoCustomer.model.Customer;
 
+@Service
 public interface CustomerService {
 
 	/**
