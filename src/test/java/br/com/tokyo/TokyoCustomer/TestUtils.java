@@ -9,6 +9,7 @@ public class TestUtils {
 	
  	public static Customer getValidNewCustomer() {
 		return new Customer(
+				10L,
 				"Alex", 
 				LocalDateTime.now().minusYears(18), 
 				"fabiovariant@hotmail.com", 

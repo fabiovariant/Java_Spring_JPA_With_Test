@@ -13,6 +13,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -24,12 +28,17 @@ public class Customer {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
+	@NotNull
+	@Size(min=1, message="The name must to have min size of 1 character.")
 	private String name;
 	
 	@JsonFormat(pattern="yyyy-MM-dd")
+	@NotNull
 	private LocalDateTime bday;
 	
 	@Column(unique=true)
+	@Email
+	@NotNull
 	private String email;
 
 	@Column(name="is_active")
